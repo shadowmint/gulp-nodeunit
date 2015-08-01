@@ -50,8 +50,6 @@ var GulpNodeUnit = (function (_Plugin) {
       var _this = this;
 
       var runner = _path2['default'].resolve(__dirname + '/../node_modules/nodeunit/bin/nodeunit');
-      console.log(runner);
-      console.log(this.files);
       var child = _child_process2['default'].exec('node ' + runner + ' ' + this.files.join(' '));
       child.stdout.pipe(process.stdout);
       child.stderr.pipe(process.stderr);

@@ -1,8 +1,7 @@
-var nodeunit = require('../');
+var nodeunit = require('gulp-nodeunit');
 var run = require('run-sequence');
 var babel = require('gulp-babel');
 var plumber = require('gulp-plumber');
-var clean = require('gulp-clean');
 var gulp = require('gulp');
 
 gulp.task('default', ['scripts-1', 'scripts-2']);
