@@ -1,0 +1,25 @@
+{
+  "name": "gulp-nodeunit",
+  "version": "0.0.1",
+  "description": "Runs nodeunit on files.",
+  "license": "MIT",
+  "repository": "shadowmint/gulp-nodeunit",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js",
+    "build"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "babel-core": "^5.8.19",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-nodeunit": "file:..",
+    "gulp-plumber": "^1.0.1",
+    "run-sequence": "^1.1.1"
+  }
+}
