@@ -1,6 +1,6 @@
 {
   "name": "gulp-nodeunit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Runs nodeunit on files.",
   "license": "MIT",
   "repository": "shadowmint/gulp-nodeunit",
