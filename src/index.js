@@ -16,18 +16,29 @@ class GulpNodeUnit extends Plugin {
   }
 
   handle_close(target, callback) {
-    var runner = path.resolve(`${__dirname}/../node_modules/nodeunit/bin/nodeunit`);
-    var child = cp.exec(`node ${runner} ${this.files.join(' ')}`);
-    child.stdout.pipe(process.stdout);
-    child.stderr.pipe(process.stderr);
-    child.on('exit', (data) => {
-      this.files = [];
-      if (data) {
-        var err = new gutil.PluginError(this.name, "Tests failed");
+    cp.exec('npm bin', (error, stdout, stderr) => {
+      if (error !== null) {
+        var err = new gutil.PluginError(this.name, `Unable to locate bin folder: ${error}`);
         callback(err);
       }
-      callback();
+      else {
+        var bin_folder = stdout.trim();
+        var runner = path.resolve(`${bin_folder}/nodeunit`);
+        var child = cp.exec(`node ${runner} ${this.files.join(' ')}`);
+        child.stdout.pipe(process.stdout);
+        child.stderr.pipe(process.stderr);
+        child.on('exit', (data) => {
+          this.files = [];
+          if (data) {
+            var err = new gutil.PluginError(this.name, "Tests failed");
+            callback(err);
+          }
+          callback();
+        });
+      }
     });
+
+
   }
 }
 

@@ -15,7 +15,6 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "buffertools": "^2.1.2",
     "gulp-tools": "git://github.com/shadowmint/gulp-tools.git",
     "gulp-util": "^3.0.0",
     "nodeunit": "^0.9.1",
