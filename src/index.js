@@ -22,9 +22,11 @@ class GulpNodeUnit extends Plugin {
         callback(err);
       }
       else {
+        var isWin = /^win/.test(process.platform);
         var bin_folder = stdout.trim();
         var runner = path.resolve(`${bin_folder}/nodeunit`);
-        var child = cp.exec(`node ${runner} ${this.files.join(' ')}`);
+        if (isWin) { runner += '.cmd'; }
+        var child = cp.exec(`${runner} ${this.files.join(' ')}`);
         child.stdout.pipe(process.stdout);
         child.stderr.pipe(process.stderr);
         child.on('exit', (data) => {

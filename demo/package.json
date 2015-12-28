@@ -1,25 +1,20 @@
 {
-  "name": "gulp-nodeunit",
-  "version": "0.0.1",
-  "description": "Runs nodeunit on files.",
-  "license": "MIT",
-  "repository": "shadowmint/gulp-nodeunit",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "files": [
-    "index.js",
-    "build"
-  ],
-  "keywords": [
-    "gulpplugin"
-  ],
-  "dependencies": {
-    "babel-core": "^5.8.19",
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.babel.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.1.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-nodeunit": "file:///c:\\projects\\unity\\gulp-nodeunit",
     "gulp-plumber": "^1.0.1",
-    "run-sequence": "^1.1.1",
-    "gulp-nodeunit": "file:.."
-  }
+    "run-sequence": "^1.1.5"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -9,14 +9,14 @@ gulp.task('default', ['scripts-1', 'scripts-2']);
 gulp.task('scripts-1', function() {
   return gulp.src('./src/**/*.js')
     .pipe(plumber())
-    .pipe(babel())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./build/scripts'));
 });
 
 gulp.task('scripts-2', function() {
   return gulp.src('./components/**/*.js')
     .pipe(plumber())
-    .pipe(babel())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./build/components'));
 });
 

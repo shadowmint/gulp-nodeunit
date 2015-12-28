@@ -4,6 +4,6 @@ var gulp = require('gulp');
 
 gulp.task('default', function(callback) {
   return gulp.src('./src/**/*.js')
-    .pipe(babel())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(gulp.dest('./build'));
 });

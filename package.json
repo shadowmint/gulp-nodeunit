@@ -1,6 +1,6 @@
 {
   "name": "gulp-nodeunit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Runs nodeunit on files.",
   "license": "MIT",
   "repository": "shadowmint/gulp-nodeunit",
@@ -23,9 +23,9 @@
     "vinyl": "^0.4.6"
   },
   "devDependencies": {
-    "babel-core": "^5.8.19",
+    "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.1.0",
+    "gulp-babel": "^6.1.1",
     "run-sequence": "^1.1.1"
   }
 }
